@@ -6,7 +6,6 @@ import getFullDate from "../../../utils/getFullDate";
 import Loader from "../../Loader";
 import { CardContent, Typography, Card } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faComments } from "@fortawesome/free-solid-svg-icons";
 import "./PlaceTips.scss";
 
@@ -31,7 +30,7 @@ const PlaceTips = ({ id, placeTips: { tips }, getPlaceTips }) => {
       {tips &&
         tips.map((tip) => {
           return (
-            <>
+            <div key={tip.id} className="place__tips-tip">
               <Card variant="outlined" sx={{ mb: "0.5rem" }}>
                 <CardContent variant="outlined">
                   <Typography variant="subtitle2" color="info.main">
@@ -42,7 +41,7 @@ const PlaceTips = ({ id, placeTips: { tips }, getPlaceTips }) => {
                   </Typography>
                 </CardContent>
               </Card>
-            </>
+            </div>
           );
         })}
     </div>

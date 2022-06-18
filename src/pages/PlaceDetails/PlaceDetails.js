@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import PlaceDetailsHeader from "../../components/PlaceDetails/PlaceDetailsHeader";
 import PlaceDetailsName from "../../components/PlaceDetails/PlaceDetailsName";
 import PlaceDetailsLocation from "../../components/PlaceDetails/PlaceDetailsLocation";
+import PlacePhotos from "../../components/PlaceDetails/PlacePhotos";
 import PlaceTips from "../../components/PlaceDetails/PlaceTips";
 import PlaceDetailsFooter from "../../components/PlaceDetails/PlaceDetailsFooter";
 import "./PlaceDetails.scss";
@@ -25,6 +26,7 @@ const PlaceDetails = ({ places: { places } }) => {
               <div key={place.fsq_id} className="place__details">
                 <PlaceDetailsName place={place} />
                 <PlaceDetailsLocation place={place} />
+                <PlacePhotos id={place.fsq_id} />
                 <PlaceTips id={place.fsq_id} />
               </div>
             );
