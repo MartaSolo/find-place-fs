@@ -11,7 +11,7 @@ export const getPlaceTips = (id) => async (dispatch) => {
       },
     };
     const response = await fetch(
-      `https://api.foursquare.com/v3/places/${id}/tips?limit=50`,
+      `https://api.foursquare.com/v3/places/${id}/tips?limit=50&sort=NEWEST`,
       options
     );
     console.log("response", response);
