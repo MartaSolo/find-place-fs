@@ -1,0 +1,24 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.header {
+  box-shadow: 0 6px 4px -4px $colorBoxShadowHeader;
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  @include mdScreen {
+    justify-content: center;
+  }
+  .btn__toggle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $colorBtnToggleText;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    background-color: $colorBtnToggle;
+    max-width: 80px;
+    cursor: pointer;
+  }
+}

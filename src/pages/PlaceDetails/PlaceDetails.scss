@@ -1,0 +1,12 @@
+.place__page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .place {
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+    margin: 0 auto;
+    flex-grow: 1;
+  }
+}

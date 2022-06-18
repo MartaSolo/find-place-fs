@@ -1,0 +1,9 @@
+.place__location--address {
+  display: flex;
+  .place__location--icon {
+    padding: 0.5rem;
+  }
+  .place__location--adress {
+    padding: 0 0 0.5rem 0.5rem;
+  }
+}

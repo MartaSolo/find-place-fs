@@ -1,0 +1,10 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.places__map {
+  height: 100%;
+  width: 100%;
+  @include mdScreen {
+    width: 70%;
+  }
+}

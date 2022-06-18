@@ -1,0 +1,6 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.place__reviews {
+  @include card;
+}

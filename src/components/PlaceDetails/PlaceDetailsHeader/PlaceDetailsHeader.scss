@@ -1,0 +1,40 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.header__place {
+  box-shadow: 0 6px 4px -4px $colorBoxShadowHeader;
+  width: 100%;
+  padding: 0.5rem;
+  .header__place--title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    h1 {
+      font-size: 1.5rem;
+      padding-right: 0.5rem;
+      @include mdScreen {
+        font-size: 2rem;
+      }
+    }
+    .header__place--link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: $colorBtnToggleText;
+      background-color: $colorBtnToggle;
+      border-radius: 5px;
+      padding: 1rem 1.5rem;
+      &:hover {
+        background-color: $colorBtnToggleHover;
+      }
+      @include mdScreen {
+        padding: 1rem 2rem;
+      }
+    }
+  }
+}

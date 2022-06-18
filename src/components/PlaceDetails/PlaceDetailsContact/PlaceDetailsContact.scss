@@ -1,0 +1,25 @@
+@import "../../../scss/variables";
+
+.place__contact {
+  .place__contact--phone {
+    display: flex;
+    .place__contact--icon {
+      padding: 0.5rem;
+    }
+    .place__contact--number {
+      padding: 0.5rem;
+    }
+  }
+  .place__contact--website {
+    display: inline-block;
+    letter-spacing: 1px;
+    border-radius: 0.5rem;
+    background-color: $colorLinkWebsite;
+    padding: 0.5rem 1.5rem;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+    &:hover {
+      background-color: $colorLinkWebsiteHover;
+    }
+  }
+}

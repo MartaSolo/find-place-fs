@@ -1,0 +1,13 @@
+export const GET_PLACES = "GET_PLACES";
+export const LOADING_PLACES = "LOADING_PLACES";
+export const ERROR_PLACES = "ERROR_PLACES";
+
+export const GET_PLACE_EXTENDED = "GET_PLACE_EXTENDED";
+export const LOADING_PLACE_EXTENDED = "LOADING_PLACE_EXTENDED";
+export const ERROR_PLACE_EXTENDED = "ERROR_PLACE_EXTENDED";
+
+export const SET_TYPE = "SET_TYPE";
+
+export const GET_LATLONG = "GET_LATLONG";
+
+export const GET_BOUNDS = "GET_BOUNDS";

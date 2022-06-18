@@ -1,0 +1,21 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.place__location {
+  @include card;
+  .place__location--card {
+    padding-top: 0.5rem;
+    @include mdScreen {
+      display: flex;
+    }
+    .place__location--desc {
+      @include mdScreen {
+        width: 50%;
+      }
+    }
+    .place__location--map {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
