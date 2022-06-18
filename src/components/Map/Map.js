@@ -8,13 +8,7 @@ import PlaceOnMap from "./PlaceOnMap";
 import UserLocationOnMap from "./UserLocationOnMap";
 import "./Map.scss";
 
-const Map = ({
-  places: { places },
-  latLong,
-  getLatLong,
-  bounds,
-  getBounds,
-}) => {
+const Map = ({ places: { places }, latLong, getLatLong, getBounds }) => {
   const dispatch = useDispatch();
 
   // getting the user location coordinates
@@ -39,7 +33,6 @@ const Map = ({
       e.bounds.sw.lng
     );
   };
-  // console.log("bounds", bounds);
 
   return (
     <section className="places__map">
@@ -51,14 +44,14 @@ const Map = ({
         // onChange={(e) => console.log(e)}
         onChange={handleChange}
       >
-        {/* {places?.map((place) => (
+        {places?.map((place) => (
           <PlaceOnMap
-            key={place.id}
+            key={place.fsq_id}
             place={place}
-            lat={Number(place.position.lat)}
-            lng={Number(place.position.lon)}
+            lat={Number(place.geocodes.main.latitude)}
+            lng={Number(place.geocodes.main.longitude)}
           />
-        ))} */}
+        ))}
 
         <UserLocationOnMap lat={latLong.latitude} lng={latLong.longitude} />
       </GoogleMap>

@@ -7,11 +7,7 @@ import {
 import { Link } from "react-router-dom";
 import "./PlaceOnMap.scss";
 
-const PlaceOnMap = ({
-  place: {
-    poi: { name },
-  },
-}) => {
+const PlaceOnMap = ({ place: { name } }) => {
   const [showInfo, setShowInfo] = useState(null);
 
   const handleToggleShowInfo = () => {
