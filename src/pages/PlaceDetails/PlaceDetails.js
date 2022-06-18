@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import PlaceDetailsHeader from "../../components/PlaceDetails/PlaceDetailsHeader";
 import PlaceDetailsName from "../../components/PlaceDetails/PlaceDetailsName";
 import PlaceDetailsLocation from "../../components/PlaceDetails/PlaceDetailsLocation";
+import PlaceTips from "../../components/PlaceDetails/PlaceTips";
 import PlaceDetailsFooter from "../../components/PlaceDetails/PlaceDetailsFooter";
-import PlaceExtended from "../../components/PlaceExtended";
 import "./PlaceDetails.scss";
 
 const PlaceDetails = ({ places: { places } }) => {
@@ -24,8 +24,8 @@ const PlaceDetails = ({ places: { places } }) => {
             return (
               <div key={place.fsq_id} className="place__details">
                 <PlaceDetailsName place={place} />
-
                 <PlaceDetailsLocation place={place} />
+                <PlaceTips id={place.fsq_id} />
               </div>
             );
           })}

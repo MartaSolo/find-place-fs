@@ -1,6 +1,5 @@
 import PlaceDetailsAddress from "../PlaceDetailsAddress";
 import PlaceDetailsMap from "../PlaceDetailsMap";
-import PlaceDetailsContact from "../PlaceDetailsContact";
 import { Typography } from "@mui/material";
 import "./PlaceDetailsLocation.scss";
 
