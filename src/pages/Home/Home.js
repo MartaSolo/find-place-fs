@@ -6,7 +6,7 @@ import Map from "../../components/Map";
 import { useMediaQuery } from "@mui/material";
 import "./Home.scss";
 
-const Home = ({ places }) => {
+const Home = () => {
   const [showMap, setShowMap] = useState(true);
   const desktop = useMediaQuery("(min-width: 800px)");
 
@@ -19,14 +19,12 @@ const Home = ({ places }) => {
 
         <div className="places">
           {!desktop && showMap && <Map />}
-          {/* {!desktop && showMap && <Map places={places} />} */}
           {!desktop && !showMap && <PlacesList />}
-          {/* {!desktop && !showMap && <PlacesList places={places} />} */}
 
           {desktop && (
             <>
-              <Map places={places} />
-              <PlacesList places={places} />
+              <Map />
+              <PlacesList />
             </>
           )}
         </div>
