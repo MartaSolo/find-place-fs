@@ -14,9 +14,9 @@ export const getPlaceTips = (id) => async (dispatch) => {
       `https://api.foursquare.com/v3/places/${id}/tips?limit=50&sort=NEWEST`,
       options
     );
-    console.log("response", response);
+    // console.log("response", response);
     const data = await response.json();
-    console.log("data", data);
+    // console.log("data", data);
     dispatch({
       type: GET_PLACE_TIPS,
       payload: data,
