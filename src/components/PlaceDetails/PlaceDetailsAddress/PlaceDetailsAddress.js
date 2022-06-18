@@ -5,7 +5,7 @@ import "./PlaceDetailsAddress.scss";
 
 const PlaceDetailsAddress = ({
   place: {
-    address: { streetName, streetNumber, postalCode, municipality, country },
+    location: { address, postcode, locality, country },
   },
 }) => {
   return (
@@ -17,14 +17,10 @@ const PlaceDetailsAddress = ({
         style={{ color: "rgba(204,68,108, 1)" }}
       />
       <div className="place__location--adress">
-        {streetName && (
+        {address && <Typography variant="subtitle1">{address}</Typography>}
+        {postcode && (
           <Typography variant="subtitle1">
-            {streetName} {streetNumber}
-          </Typography>
-        )}
-        {postalCode && (
-          <Typography variant="subtitle1">
-            {postalCode} {municipality}, {country}
+            {postcode} {locality}, {country}
           </Typography>
         )}
       </div>

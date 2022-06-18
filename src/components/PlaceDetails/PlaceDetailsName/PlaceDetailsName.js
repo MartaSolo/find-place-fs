@@ -1,11 +1,7 @@
 import { Chip, Typography } from "@mui/material";
 import "./PlaceDetailsName.scss";
 
-const PlaceDetailsName = ({
-  place: {
-    poi: { name, categories },
-  },
-}) => {
+const PlaceDetailsName = ({ place: { name, categories } }) => {
   return (
     <>
       <Typography variant="h5" sx={{ pl: 2, pb: 1 }}>
@@ -17,7 +13,7 @@ const PlaceDetailsName = ({
           return (
             <Chip
               key={index}
-              label={category}
+              label={category.name}
               color="info"
               sx={{
                 mr: 1,

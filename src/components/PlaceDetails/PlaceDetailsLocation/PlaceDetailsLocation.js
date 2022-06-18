@@ -8,13 +8,12 @@ const PlaceDetailsLocation = ({ place }) => {
   return (
     <div className="place__location">
       <Typography variant="h6" gutterBottom>
-        Location and contact
+        Location
       </Typography>
 
       <div className="place__location--card">
         <div className="place__location--desc">
           <PlaceDetailsAddress place={place} />
-          <PlaceDetailsContact place={place} />
         </div>
 
         <div className="place__location--map">
