@@ -1,10 +1,10 @@
 import { GET_BOUNDS } from "../actions/types";
 
 const initialState = {
-  topLeftLatitude: "",
-  topLeftLongitude: "",
-  btmRightLatitude: "",
-  btmRightLongitude: "",
+  neLatitude: "",
+  neLongitude: "",
+  swLatitude: "",
+  swLongitude: "",
 };
 
 export default (state = initialState, action) => {
@@ -12,10 +12,10 @@ export default (state = initialState, action) => {
     case GET_BOUNDS:
       return {
         ...state,
-        topLeftLatitude: action.payload.topLeftLatitude,
-        topLeftLongitude: action.payload.topLeftLongitude,
-        btmRightLatitude: action.payload.btmRightLatitude,
-        btmRightLongitude: action.payload.btmRightLongitude,
+        neLatitude: action.payload.neLatitude,
+        neLongitude: action.payload.neLongitude,
+        swLatitude: action.payload.swLatitude,
+        swLongitude: action.payload.swLongitude,
       };
     default:
       return state;

@@ -1,31 +1,37 @@
 import { GET_PLACES, LOADING_PLACES, ERROR_PLACES } from "./types";
+import findCategory from "../utils/findCategory";
 
 export const getPlaces =
-  (
-    topLeftLatitude,
-    topLeftLongitude,
-    btmRightLatitude,
-    btmRightLongitude,
-    typeOfPlace
-  ) =>
+  (topRightLat, topRighttLong, btmLeftLat, btmLeftLong, typeOfPlace) =>
   async (dispatch) => {
-    const query = typeOfPlace;
-    const topLeftLat = String(topLeftLatitude);
-    const topLeftLong = String(topLeftLongitude);
-    const btmRightLat = String(btmRightLatitude);
-    const btmRightLong = String(btmRightLongitude);
+    const neLatitude = String(topRightLat);
+    const neLongitude = String(topRighttLong);
+    const swLatitude = String(btmLeftLat);
+    const swLongitude = String(btmLeftLong);
+
+    const categories = findCategory(typeOfPlace);
+    // console.log("categories", categories);
+
     try {
       setLoading();
+      const options = {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          Authorization: "fsq38M6RZ+WMYi+Hu6J2YI/4DFBOSH2B23GvWzzNq0NsTpA=",
+        },
+      };
+      // ok
       const response = await fetch(
-        `https://api.tomtom.com/search/2/poiSearch/${query}.json?topLeft=${topLeftLat}%2C${topLeftLong}&btmRight=${btmRightLat}%2C${btmRightLong}&view=Unified&relatedPois=off&key=${process.env.REACT_APP_TOMTOM_API_KEY}`
+        `https://api.foursquare.com/v3/places/search?categories=${categories}&ne=${neLatitude}%2C${neLongitude}&sw=${swLatitude}%2C${swLongitude}`,
+        options
       );
+      // console.log("response", response);
       const data = await response.json();
-      const filteredData = data.results.filter((dataItem) => {
-        return dataItem.dataSources !== undefined;
-      });
+      // console.log("data", data);
       dispatch({
         type: GET_PLACES,
-        payload: filteredData,
+        payload: data.results,
       });
     } catch (error) {
       dispatch({

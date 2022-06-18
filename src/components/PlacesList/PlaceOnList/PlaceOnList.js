@@ -9,8 +9,8 @@ import {
 
 const PlaceOnList = ({
   place: {
-    poi: { name },
-    address: { streetName, streetNumber, postalCode, municipality, country },
+    name,
+    location: { address, postcode, locality, country },
   },
 }) => {
   return (
@@ -19,14 +19,14 @@ const PlaceOnList = ({
         <CardContent variant="outlined">
           <Typography variant="h6">{name}</Typography>
 
-          {streetName && (
+          {address && (
             <Typography variant="subtitle2" color="textSecondary">
-              {streetName} {streetNumber},{" "}
+              {address},{" "}
             </Typography>
           )}
 
           <Typography variant="subtitle2" color="textSecondary">
-            {postalCode} {municipality}, {country}
+            {postcode} {locality}, {country}
           </Typography>
         </CardContent>
         <CardActions>

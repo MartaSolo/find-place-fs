@@ -1,18 +1,13 @@
 import { GET_BOUNDS } from "./types";
 
-export const getBounds = (
-  topLeftLatitude,
-  topLeftLongitude,
-  btmRightLatitude,
-  btmRightLongitude
-) => {
+export const getBounds = (neLatitude, neLongitude, swLatitude, swLongitude) => {
   return {
     type: GET_BOUNDS,
     payload: {
-      topLeftLatitude,
-      topLeftLongitude,
-      btmRightLatitude,
-      btmRightLongitude,
+      neLatitude,
+      neLongitude,
+      swLatitude,
+      swLongitude,
     },
   };
 };

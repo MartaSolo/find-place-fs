@@ -9,10 +9,10 @@ import "./PlacesList.scss";
 const PlacesList = ({ places: { places }, getPlaces, type, bounds }) => {
   useEffect(() => {
     getPlaces(
-      bounds.topLeftLatitude,
-      bounds.topLeftLongitude,
-      bounds.btmRightLatitude,
-      bounds.btmRightLongitude,
+      bounds.neLatitude,
+      bounds.neLongitude,
+      bounds.swLatitude,
+      bounds.swLongitude,
       type
     );
   }, [bounds, type]);
@@ -23,7 +23,7 @@ const PlacesList = ({ places: { places }, getPlaces, type, bounds }) => {
     return (
       <section className="places__list">
         {places.map((place) => {
-          return <PlaceOnList key={place.id} place={place} />;
+          return <PlaceOnList key={place.fsq_id} place={place} />;
         })}
       </section>
     );
