@@ -40,15 +40,15 @@ const PlaceTypes = ({ type, setType }) => {
 
         <Grid item xs={6} sm={3} className="radio">
           <PlaceType
-            inputId="theatre"
-            inputValue="theatre"
+            inputId="theater"
+            inputValue="theater"
             onChange={handleChange}
-            htmlFor="theatre"
+            htmlFor="theater"
             labelClassName={
-              type === "theatre" ? "radio__label checked" : "radio__label"
+              type === "theater" ? "radio__label checked" : "radio__label"
             }
             icon={faMasksTheater}
-            label="Theatre"
+            label="Theater"
           />
         </Grid>
 
@@ -110,33 +110,33 @@ const PlaceTypes = ({ type, setType }) => {
 
         <Grid item xs={6} sm={3} className="radio">
           <PlaceType
-            inputId="tourist attraction"
-            inputValue="tourist attraction"
+            inputId="landmarks and outdoors"
+            inputValue="landmarks and outdoors"
             onChange={handleChange}
-            htmlFor="tourist attraction"
+            htmlFor="landmarks and outdoors"
             labelClassName={
-              type === "tourist attraction"
+              type === "landmarks and outdoors"
                 ? "radio__label checked"
                 : "radio__label"
             }
             icon={faMonument}
-            label={`Tourist\nattraction`}
+            label={`Landmarks\nand outdoors`}
           />
         </Grid>
 
         <Grid item xs={6} sm={3} className="radio">
           <PlaceType
-            inputId="sport facility"
-            inputValue="sport facility"
+            inputId="sport and recreation"
+            inputValue="sport and recreation"
             onChange={handleChange}
-            htmlFor="sport facility"
+            htmlFor="sport and recreation"
             labelClassName={
-              type === "sport facility"
+              type === "sport and recreation"
                 ? "radio__label checked"
                 : "radio__label"
             }
             icon={faBasketball}
-            label={`Sport\nfacility`}
+            label={`Sport and\nrecreation`}
           />
         </Grid>
       </Grid>

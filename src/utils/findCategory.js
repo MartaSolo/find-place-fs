@@ -2,7 +2,7 @@ const findCategory = (type) => {
   switch (type) {
     case "museum":
       return "10027,10028,10029,10030,10031";
-    case "theatre":
+    case "theater":
       return "10036,10043";
     case "cinema":
       return "10024,10025,10026";
