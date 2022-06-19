@@ -31,40 +31,46 @@ const PlacePhotos = ({ id, name, placePhotos: { photos }, getPlacePhotos }) => {
       setSlideIndex(photos.length);
     }
   };
+  if (!photos) {
+    return <Loader />;
+  }
 
-  return (
-    <div className="place__photos">
-      <h6 className="place__photos--title">
-        <FontAwesomeIcon
-          icon={faImages}
-          size="xl"
-          className="place__photos--icon"
-        />
-        Photos
-      </h6>
-      {!photos && <Loader />}
-      {photos &&
-        photos.map((photo, index) => {
-          return (
-            <div
-              key={photo.id}
-              className={
-                slideIndex === index + 1
-                  ? "place__photos--gallery active"
-                  : "place__photos--gallery"
-              }
-            >
-              <PlacePhoto
-                alt={name}
-                url={`${photo.prefix}800x600${photo.suffix}`}
-              />
-            </div>
-          );
-        })}
-      <PhotoSliderBtn direction="next" moveSlide={nextSlide} />
-      <PhotoSliderBtn direction="prev" moveSlide={prevSlide} />
-    </div>
-  );
+  if (photos.length > 0) {
+    return (
+      <div className="place__photos">
+        <h6 className="place__photos--title">
+          <FontAwesomeIcon
+            icon={faImages}
+            size="xl"
+            className="place__photos--icon"
+          />
+          Photos
+        </h6>
+        {photos &&
+          photos.map((photo, index) => {
+            return (
+              <div
+                key={photo.id}
+                className={
+                  slideIndex === index + 1
+                    ? "place__photos--gallery active"
+                    : "place__photos--gallery"
+                }
+              >
+                <PlacePhoto
+                  alt={name}
+                  url={`${photo.prefix}800x600${photo.suffix}`}
+                />
+              </div>
+            );
+          })}
+        <PhotoSliderBtn direction="next" moveSlide={nextSlide} />
+        <PhotoSliderBtn direction="prev" moveSlide={prevSlide} />
+      </div>
+    );
+  } else {
+    return null;
+  }
 };
 
 PlacePhotos.propTypes = {
