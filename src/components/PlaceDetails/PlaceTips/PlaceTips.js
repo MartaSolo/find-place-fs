@@ -14,21 +14,22 @@ const PlaceTips = ({ id, placeTips: { tips }, getPlaceTips }) => {
     getPlaceTips(id);
   }, [id]);
 
-  // console.log("tips", tips);
+  if (!tips) {
+    return <Loader />;
+  }
 
-  return (
-    <div className="place__tips">
-      <h6 className="place__tips-title">
-        <FontAwesomeIcon
-          icon={faComments}
-          size="xl"
-          className="place__tips-icon"
-        />
-        Visitors Tips
-      </h6>
-      {!tips && <Loader />}
-      {tips &&
-        tips.map((tip) => {
+  if (tips.length > 0) {
+    return (
+      <div className="place__tips">
+        <h6 className="place__tips--title">
+          <FontAwesomeIcon
+            icon={faComments}
+            size="xl"
+            className="place__tips--icon"
+          />
+          Visitors Tips
+        </h6>
+        {tips.map((tip) => {
           return (
             <div key={tip.id} className="place__tips-tip">
               <Card variant="outlined" sx={{ mb: "0.5rem" }}>
@@ -44,8 +45,11 @@ const PlaceTips = ({ id, placeTips: { tips }, getPlaceTips }) => {
             </div>
           );
         })}
-    </div>
-  );
+      </div>
+    );
+  } else {
+    return null;
+  }
 };
 
 PlaceTips.propTypes = {
@@ -58,54 +62,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { getPlaceTips })(PlaceTips);
-// import { useEffect } from "react";
-// import { connect } from "react-redux";
-// import PropTypes from "prop-types";
-// import { getPlaceTips } from "../../../actions/placeTipsActions";
-// import getFullDate from "../../../utils/getFullDate";
-// import Loader from "../../Loader";
-// import { CardContent, Typography, Card } from "@mui/material";
-// import "./PlaceTips.scss";
-
-// const PlaceTips = ({ id, placeTips: { tips }, getPlaceTips }) => {
-//   useEffect(() => {
-//     getPlaceTips(id);
-//   }, [id]);
-
-//   console.log("tips", tips);
-
-//   return (
-//     <div className="place__tips">
-//       <Typography variant="h6" gutterBottom>
-//         Visitors Tips
-//       </Typography>
-//       {tips.map((tip) => {
-//         return (
-//           <>
-//             <Card variant="outlined" sx={{ mb: "0.5rem" }}>
-//               <CardContent variant="outlined">
-//                 <Typography variant="subtitle2" color="info.main">
-//                   {getFullDate(tip.created_at)}
-//                 </Typography>
-//                 <Typography variant="subtitle1" color="text.primary">
-//                   {tip.text}
-//                 </Typography>
-//               </CardContent>
-//             </Card>
-//           </>
-//         );
-//       })}
-//     </div>
-//   );
-// };
-
-// PlaceTips.propTypes = {
-//   placeTips: PropTypes.object.isRequired,
-//   getPlaceTips: PropTypes.func.isRequired,
-// };
-
-// const mapStateToProps = (state) => ({
-//   placeTips: state.placeTips,
-// });
-
-// export default connect(mapStateToProps, { getPlaceTips })(PlaceTips);

@@ -10,13 +10,16 @@ const PlaceDetailsAddress = ({
 }) => {
   return (
     <div className="place__location--address">
-      <FontAwesomeIcon
-        icon={faLocationDot}
-        size="2x"
-        className="place__location--icon"
-        style={{ color: "rgba(204,68,108, 1)" }}
-      />
-      <div className="place__location--adress">
+      <h6 className="place__location--title">
+        <FontAwesomeIcon
+          icon={faLocationDot}
+          size="xl"
+          className="place__location--icon"
+        />
+        Location
+      </h6>
+
+      <div className="place__location--details">
         {address && <Typography variant="subtitle1">{address}</Typography>}
         {postcode && (
           <Typography variant="subtitle1">

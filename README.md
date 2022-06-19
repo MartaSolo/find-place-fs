@@ -2,17 +2,16 @@
 
 ## Project description:
 
-Places-app is a responsive React application showing places of interest on map (and list) based on the user geolocation. User can also get detail in formation about any object he chooses.
+Places-app is a responsive React application showing places of interest on map and list based on the user geolocation and choice of a place type. User can also get detail information about any object she/he chooses.
 
 The app uses:
 
 1. Google Maps API for displaying map.
-2. TomTom API - Points of Interest Search - for location of points of interest.
-3. TomTom API - Points of Interest Details - for details of every point of interest.
+2. Foursquare API for location, decription and photos of place of interest (endpoints: get places, get tips, get photos).
 
 ## Used technologies:
 
-HTML5, CSS3, Sass, JavaScript (ES6), React, React Router, Material UI
+HTML5, JavaScript (ES6), React v17, React Router v6, Redux v4, Redux-Thunk, CSS3, Sass, Material UI
 
 ## View Demo:
 
@@ -20,7 +19,7 @@ https://places-app-ms.netlify.app/
 
 ## Instalation:
 
-To run the app in the development mode please provide Google Maps API key and TomTom Api Key. Put them as variables in .env file (look at .env_sample file).
+To run the app in the development mode please provide Google Maps API key and Foursquare API Key. Put them as variables in .env file (look at .env_sample file).
 
 1. You have to have node.js installed.
 2. Download the project files.
@@ -31,7 +30,3 @@ To run the app in the development mode please provide Google Maps API key and To
 ## Preview
 
 ![Places-app](https://github.com/MartaSolo/places-app/blob/master/places-app.gif)
-
-## Ideas to develop the app
-
-Adding state management - Context API.

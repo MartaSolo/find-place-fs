@@ -2,8 +2,8 @@ import "./Loader.scss";
 
 export const Loader = () => {
   return (
-    <div className="flex justify-center">
-      <div className="loader"></div>
+    <div className="loader__container">
+      <div className="loader__loader"></div>
     </div>
   );
 };

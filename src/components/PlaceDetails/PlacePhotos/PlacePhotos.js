@@ -1,39 +1,68 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getPlacePhotos } from "../../../actions/placePhotosActions";
 import Loader from "../../Loader";
 import PlacePhoto from "./PlacePhoto";
+import PhotoSliderBtn from "./PhotoSliderBtn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComments } from "@fortawesome/free-solid-svg-icons";
+import { faImages } from "@fortawesome/free-solid-svg-icons";
 import "./PlacePhotos.scss";
 
-const PlacePhotos = ({ id, placePhotos: { photos }, getPlacePhotos }) => {
+const PlacePhotos = ({ id, name, placePhotos: { photos }, getPlacePhotos }) => {
+  const [slideIndex, setSlideIndex] = useState(1);
+
   useEffect(() => {
     getPlacePhotos(id);
   }, [id]);
 
-  console.log("photos", photos);
+  const nextSlide = () => {
+    if (slideIndex !== photos.length) {
+      setSlideIndex(slideIndex + 1);
+    } else {
+      setSlideIndex(1);
+    }
+  };
+
+  const prevSlide = () => {
+    if (slideIndex !== 1) {
+      setSlideIndex(slideIndex - 1);
+    } else {
+      setSlideIndex(photos.length);
+    }
+  };
 
   return (
-    <div className="place__tips">
-      <h6 className="place__tips-title">
+    <div className="place__photos">
+      <h6 className="place__photos--title">
         <FontAwesomeIcon
-          icon={faComments}
+          icon={faImages}
           size="xl"
-          className="place__tips-icon"
+          className="place__photos--icon"
         />
-        Place photos
+        Photos
       </h6>
       {!photos && <Loader />}
       {photos &&
-        photos.map((photo) => {
+        photos.map((photo, index) => {
           return (
-            <div key={photo.id}>
-              <PlacePhoto url={`${photo.prefix}original${photo.suffix}`} />
+            <div
+              key={photo.id}
+              className={
+                slideIndex === index + 1
+                  ? "place__photos--gallery active"
+                  : "place__photos--gallery"
+              }
+            >
+              <PlacePhoto
+                alt={name}
+                url={`${photo.prefix}800x600${photo.suffix}`}
+              />
             </div>
           );
         })}
+      <PhotoSliderBtn direction="next" moveSlide={nextSlide} />
+      <PhotoSliderBtn direction="prev" moveSlide={prevSlide} />
     </div>
   );
 };

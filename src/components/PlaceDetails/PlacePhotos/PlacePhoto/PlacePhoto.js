@@ -1,12 +1,12 @@
 import Loader from "../../../Loader";
+import "./PlacePhoto.scss";
 
-const PlacePhoto = ({ url }) => {
+const PlacePhoto = ({ alt, url }) => {
   return (
-    <div>
-      <p> Place photo</p>
+    <>
       {!url && <Loader />}
-      {url && <img src={url}></img>}
-    </div>
+      {url && <img src={url} alt={alt} className="place__photos--photo" />}
+    </>
   );
 };
 

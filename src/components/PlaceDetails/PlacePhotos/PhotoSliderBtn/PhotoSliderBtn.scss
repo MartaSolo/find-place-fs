@@ -1,0 +1,32 @@
+@import "../../../../scss/variables";
+
+.place__photos--btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: $colorSliderBtn;
+  border: 1px solid $colorSliberBtnBorder;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: $colorSliderBtnHover;
+  }
+  &.next {
+    top: 56%;
+    right: 20px;
+    transform: translateY(-60%);
+  }
+  &.prev {
+    top: 56%;
+    left: 20px;
+    transform: translateY(-60%);
+  }
+  .place__photos--btn-icon {
+    width: 25px;
+    height: 25px;
+    pointer-events: none;
+  }
+}

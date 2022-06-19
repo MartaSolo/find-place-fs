@@ -2,6 +2,11 @@
 
 .place__map {
   position: relative;
+  .place__map--location {
+    .places__map--icon {
+      color: $colorAccentMap;
+    }
+  }
   .place__map--card {
     position: absolute;
     top: 50%;
@@ -24,6 +29,9 @@
       .place__map--close {
         width: 23px;
         height: 23px;
+        .places__map--close-icon {
+          color: $colorAccentMap;
+        }
       }
     }
     .place__map--link {

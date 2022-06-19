@@ -19,7 +19,6 @@ const PlaceTypes = ({ type, setType }) => {
   const handleChange = (e) => {
     setType(e.target.value);
   };
-  console.log("type", type);
 
   return (
     <div className="inputs">

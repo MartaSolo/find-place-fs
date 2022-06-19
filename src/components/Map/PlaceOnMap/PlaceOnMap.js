@@ -23,7 +23,6 @@ const PlaceOnMap = ({ place: { name } }) => {
             size="4x"
             transform="up-12 left-4"
             className="places__map--icon"
-            style={{ color: "rgba(204,68,108, 1)" }}
           />
         </div>
       )}
@@ -37,7 +36,7 @@ const PlaceOnMap = ({ place: { name } }) => {
                 icon={faRectangleXmark}
                 size="2x"
                 transform="up-3 left-5"
-                style={{ color: "rgba(204,68,108, 1)" }}
+                className="places__map--close-icon"
               />
             </button>
           </div>

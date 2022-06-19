@@ -17,8 +17,6 @@ const PlacesList = ({ places: { places }, getPlaces, type, bounds }) => {
     );
   }, [bounds, type]);
 
-  console.log("places", places);
-
   if (places) {
     return (
       <section className="places__list">

@@ -26,7 +26,7 @@ const PlaceDetails = ({ places: { places } }) => {
               <div key={place.fsq_id} className="place__details">
                 <PlaceDetailsName place={place} />
                 <PlaceDetailsLocation place={place} />
-                <PlacePhotos id={place.fsq_id} />
+                <PlacePhotos id={place.fsq_id} name={place.name} />
                 <PlaceTips id={place.fsq_id} />
               </div>
             );

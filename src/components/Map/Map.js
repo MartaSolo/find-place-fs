@@ -11,7 +11,6 @@ import "./Map.scss";
 const Map = ({ places: { places }, latLong, getLatLong, getBounds }) => {
   const dispatch = useDispatch();
 
-  // getting the user location coordinates
   useEffect(() => {
     if (navigator?.geolocation) {
       navigator.geolocation.getCurrentPosition((location) => {
@@ -22,9 +21,7 @@ const Map = ({ places: { places }, latLong, getLatLong, getBounds }) => {
       });
     }
   }, []);
-  // console.log("latLong", latLong);
 
-  // getting coordinates of two bounds of the map
   const handleChange = (e) => {
     getBounds(
       e.bounds.ne.lat,
@@ -41,7 +38,6 @@ const Map = ({ places: { places }, latLong, getLatLong, getBounds }) => {
         center={[latLong.latitude, latLong.longitude]}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
-        // onChange={(e) => console.log(e)}
         onChange={handleChange}
       >
         {places?.map((place) => (

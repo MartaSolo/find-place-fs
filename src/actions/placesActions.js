@@ -8,9 +8,7 @@ export const getPlaces =
     const neLongitude = String(topRighttLong);
     const swLatitude = String(btmLeftLat);
     const swLongitude = String(btmLeftLong);
-
     const categories = findCategory(typeOfPlace);
-    // console.log("categories", categories);
 
     try {
       setLoading();
@@ -23,12 +21,10 @@ export const getPlaces =
       };
       // ok
       const response = await fetch(
-        `https://api.foursquare.com/v3/places/search?categories=${categories}&ne=${neLatitude}%2C${neLongitude}&sw=${swLatitude}%2C${swLongitude}`,
+        `https://api.foursquare.com/v3/places/search?categories=${categories}&ne=${neLatitude}%2C${neLongitude}&sw=${swLatitude}%2C${swLongitude}&limit=20`,
         options
       );
-      // console.log("response", response);
       const data = await response.json();
-      // console.log("data", data);
       dispatch({
         type: GET_PLACES,
         payload: data.results,

@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import "./PlaceDetailsLocationOnMap.scss";
 
 const PlaceDetailsLocationOnMap = () => {
   return (
@@ -8,7 +9,7 @@ const PlaceDetailsLocationOnMap = () => {
         icon={faLocationDot}
         size="3x"
         transform="up-12 left-4"
-        style={{ color: "rgba(204,68,108, 1)" }}
+        className="place__coordinates--icon"
       />
     </div>
   );

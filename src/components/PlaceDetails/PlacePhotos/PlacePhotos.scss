@@ -1,1 +1,36 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
 
+.place__photos {
+  @include card;
+
+  width: 100%;
+  height: 500px;
+  max-height: 700px;
+  margin: auto 0;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  .place__photos--title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 0.7rem;
+    .place__photos--icon {
+      color: $colorAccentMap;
+      padding: 0 0.8rem 0 0.4rem;
+    }
+  }
+  .place__photos--gallery {
+    width: 100%;
+    height: calc(100% - 70px);
+    position: absolute;
+    left: 0;
+    bottom: 1rem;
+    opacity: 0;
+    transition: opacity ease-in-out 0.4s;
+    &.active {
+      opacity: 1;
+    }
+  }
+}

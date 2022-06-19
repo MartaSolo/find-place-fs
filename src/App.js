@@ -1,6 +1,6 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import PlaceDetails from "./pages/PlaceDetails";
 
