@@ -1,5 +1,6 @@
 import {
   GET_PLACE_PHOTOS,
+  RESET_PLACE_PHOTOS,
   LOADING_PLACE_PHOTOS,
   ERROR_PLACE_PHOTOS,
 } from "./types";
@@ -35,5 +36,11 @@ export const getPlacePhotos = (id) => async (dispatch) => {
 export const setLoading = () => {
   return {
     type: LOADING_PLACE_PHOTOS,
+  };
+};
+
+export const resetPlacePhotos = () => {
+  return {
+    type: RESET_PLACE_PHOTOS,
   };
 };

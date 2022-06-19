@@ -15,7 +15,7 @@ HTML5, JavaScript (ES6), React v17, React Router v6, Redux v4, Redux-Thunk, CSS3
 
 ## View Demo:
 
-https://places-app-ms.netlify.app/
+https://find-place-fs.netlify.app/
 
 ## Instalation:
 
