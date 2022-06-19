@@ -31,11 +31,8 @@ const PlacePhotos = ({ id, name, placePhotos: { photos }, getPlacePhotos }) => {
       setSlideIndex(photos.length);
     }
   };
-  if (!photos) {
-    return <Loader />;
-  }
 
-  if (photos.length > 0) {
+  if (photos > 0) {
     return (
       <div className="place__photos">
         <h6 className="place__photos--title">
