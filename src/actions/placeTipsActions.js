@@ -1,4 +1,9 @@
-import { GET_PLACE_TIPS, LOADING_PLACE_TIPS, ERROR_PLACE_TIPS } from "./types";
+import {
+  GET_PLACE_TIPS,
+  RESET_PLACE_TIPS,
+  LOADING_PLACE_TIPS,
+  ERROR_PLACE_TIPS,
+} from "./types";
 
 export const getPlaceTips = (id) => async (dispatch) => {
   try {
@@ -31,5 +36,11 @@ export const getPlaceTips = (id) => async (dispatch) => {
 export const setLoading = () => {
   return {
     type: LOADING_PLACE_TIPS,
+  };
+};
+
+export const resetPlaceTips = () => {
+  return {
+    type: RESET_PLACE_TIPS,
   };
 };

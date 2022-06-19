@@ -32,7 +32,7 @@ const PlacePhotos = ({ id, name, placePhotos: { photos }, getPlacePhotos }) => {
     }
   };
 
-  if (photos > 0) {
+  if (photos) {
     return (
       <div className="place__photos">
         <h6 className="place__photos--title">

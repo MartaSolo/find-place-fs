@@ -1,5 +1,6 @@
 import {
   GET_PLACE_TIPS,
+  RESET_PLACE_TIPS,
   LOADING_PLACE_TIPS,
   ERROR_PLACE_TIPS,
 } from "../actions/types";
@@ -16,6 +17,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         tips: action.payload,
+        loading: false,
+      };
+    case RESET_PLACE_TIPS:
+      return {
+        ...state,
+        tips: null,
         loading: false,
       };
     case LOADING_PLACE_TIPS:
