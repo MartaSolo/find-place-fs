@@ -29,4 +29,4 @@ To run the app in the development mode please provide Google Maps API key and Fo
 
 ## Preview
 
-![Places-app](https://github.com/MartaSolo/places-app/blob/master/places-app.gif)
+![Places-app](https://github.com/MartaSolo/find-place-fs/blob/main/Find%20a%20place%20near%20you.gif)
